@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4">
+            <h1>{{product.name}}</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4">
+            <img *ngIf="product.img" [src]="product.img" class="img-thumbnail" width="200px" height="200px" alt="Produto sem Imagem">
+            <img *ngIf="!product.img" src="https://cdn.awsli.com.br/production/static/img/produto-sem-imagem.gif" alt="sem imagem" width="85px" height="85px">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">
+            <div for="description" class="form-label">Descrição: </div>
+            {{product.description}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+            <div for="" class="form-label">Estoque</div>
+            {{product.inventory}}
+        </div>
+       <!--  <div class="col-lg-2">
+            <div for="" class="form-label">Status</div>
+            <input type="text" class="form-control" formControlName="status" placeholder="Status">
+        </div> -->
+        <div class="col-lg-3">
+            <div for="" class="form-label">Preço</div>
+            R$ {{product.value}}
+        </div>
+    </div>
+</div>

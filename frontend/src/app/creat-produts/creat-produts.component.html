@@ -1,0 +1,51 @@
+<div class="container">
+    <h3>Cadastro de um novo produto</h3>
+    <form  [formGroup]="prodForm" (ngSubmit)="submit()">
+        <div class="row">
+            <div class="col-lg-4">
+                <label for="name" class="form-label">Produto: </label>
+                <input type="text" class="form-control" formControlName="name" placeholder="Produto">
+            </div>
+            <div class="col-lg-4" *ngIf="!IdProduct">
+                <label for="img" class="form-label">Imagem: </label>
+                <input type="file" class="form-control" (change)="onChangeImg($event)" formControlName="img" placeholder="img">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8">
+                <label for="description" class="form-label">Descrição: </label>
+                <textarea class="form-control" rows="3" formControlName="description" placeholder="Descrição"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <label for="" class="form-label">Estoque</label>
+                <input type="number" class="form-control" formControlName="inventory" placeholder="Estoque">
+            </div>
+            <div class="col-lg-2">
+                <label for="" class="form-label">Status</label>
+                <select class="form-select"  formControlName="status"  aria-label="Default select example">
+                    <option selected>Open this select menu</option>
+                    <option value="1">Ativo</option>
+                    <option value="0">Inativo</option>
+                  </select>
+                <!-- <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" formControlName="status" value="true" id="flexSwitchCheckDefault">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Status</label>
+                  </div> -->
+                <!-- <label for="" class="form-label">Status</label>
+                <input class="form-check-input" type="checkbox" role="switch"   >
+                <input type="text" class="form-control" formControlName="status" placeholder="Status"> -->
+            </div>
+            <div class="col-lg-3">
+                <label for="" class="form-label">Preço</label>
+                <input type="number" name="price" min="0" value="0" step="any" class="form-control" formControlName="value" placeholder="Preço">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 mt-2">
+                <button class="btn btn-primary">Salvar</button>
+            </div>
+        </div>
+    </form>
+</div>

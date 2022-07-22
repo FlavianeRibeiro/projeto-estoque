@@ -1,0 +1,32 @@
+<div class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Estoque</th>
+            <th scope="col">Status</th>
+            <th scope="col">Preço</th>
+            <th>Ação</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of produts">
+            <td *ngIf="product.img"> <img [src]="product.img" class="img-thumbnail" width="85px" height="85px" alt="Produto sem Imagem"> </td>
+            <td *ngIf="!product.img">
+              <img src="https://cdn.awsli.com.br/production/static/img/produto-sem-imagem.gif" alt="sem imagem" width="85px" height="85px">
+            </td>
+            <td>{{product.name}} <br>{{product.description}}</td>
+            <td>{{product.inventory}}</td>
+            <td *ngIf="product.status == 1">Ativo</td>
+            <td *ngIf="product.status == 0">Inativo</td>
+            <td>{{product.value}}</td>
+            <td>
+              <button type="button" class="btn btn-outline-danger" (click)="deleteId(product.idprodut)">Excluir</button> &nbsp;
+              <button type="button" [routerLink]="['/creat', product.idprodut]" class="btn btn-outline-primary">Editar</button> &nbsp;
+              <button type="button" class="btn btn-outline-info" [routerLink]="['/view', product.idprodut]">Ver</button>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+</div>
