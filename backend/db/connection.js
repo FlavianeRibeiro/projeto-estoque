@@ -7,9 +7,11 @@ const db = mysql.createConnection({
     password:'root',
     database:'db_products',
     port:3306
-})
+});
 
 db.connect(err=>{
     if(err){ console.log(err);}
     console.log('db conectado');
-})
+});
+
+module.exports = db;
