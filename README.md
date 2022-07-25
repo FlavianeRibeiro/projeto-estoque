@@ -28,7 +28,7 @@ ng serve
 ```
 
 ## Banco de dados
-### Credencias do bando
+### Credenciais do banco
 ```shell
     host:'localhost',
     user:'SEU USERNAME',
