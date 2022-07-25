@@ -7,7 +7,7 @@ router.get('/produts', (req,res) =>{
     db.query(qr, (err, result) =>{
         if (err) throw err;
         if(result.length > 0)
-            res.send({message: 'Todos dados', data: result})
+            res.send({ data: result})
     })
 })
 
@@ -16,7 +16,7 @@ router.get('/produtsAll', (req,res) =>{
     db.query(qr, (err, result) =>{
         if (err) throw err;
         if(result.length > 0)
-            res.send({message: 'Todos dados', data: result})
+            res.send({ data: result})
     })
 })
 
@@ -47,7 +47,7 @@ router.delete('/produts/:id', (req, res) =>{
     qr = `DELETE FROM produts WHERE idprodut =  ${id}`
     db.query(qr, (err, result) =>{
         if (err) throw err;
-        res.send({data: 'Produto deletado do sistema'})
+        res.send({message: 'Produto deletado do sistema'})
     })
 })
 
@@ -58,7 +58,7 @@ router.put('/produts/:id', (req, res)=>{
 
     db.query(qr, (err, result) =>{
         if (err) throw err;
-        return res.send({message: 'Produto inserido no sistema', result:result})
+        return res.send({message: 'Produto alterado no sistema', result:result})
     })   
 })
 
