@@ -21,7 +21,6 @@ export class ApiserviceService {
   }
 
   creat(produt:any):Observable<any>{
-    console.log('api', produt)
     return this._http.post(`${this.apiUrl}`,produt)
   }
 

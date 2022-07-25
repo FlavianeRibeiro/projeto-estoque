@@ -25,6 +25,7 @@ export class ReadProdutsComponent implements OnInit {
       .subscribe((res) =>{
         this.messageInfo = res.data
       })
+      location.reload();
   }
 
 }

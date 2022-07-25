@@ -1,0 +1,8 @@
+.card{
+    padding: 5px;
+    height: 32rem
+}
+
+.card > .card-body {
+    cursor: pointer
+} 

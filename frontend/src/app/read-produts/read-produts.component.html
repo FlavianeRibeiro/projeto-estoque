@@ -1,5 +1,5 @@
 <div class="container">
-    <table class="table">
+    <table class="table table-bordered">
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -22,7 +22,7 @@
             <td *ngIf="product.status == 0">Inativo</td>
             <td>{{product.value}}</td>
             <td>
-              <button type="button" class="btn btn-outline-danger" (click)="deleteId(product.idprodut)">Excluir</button> &nbsp;
+              <button type="button" class="btn btn-outline-danger" (click)="deleteId(product.idprodut)"><i class="icofont-ui-delete"></i></button> &nbsp;
               <button type="button" [routerLink]="['/creat', product.idprodut]" class="btn btn-outline-primary">Editar</button> &nbsp;
               <button type="button" class="btn btn-outline-info" [routerLink]="['/view', product.idprodut]">Ver</button>
             </td>

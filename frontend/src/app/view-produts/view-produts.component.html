@@ -12,22 +12,28 @@
     </div>
     <div class="row">
         <div class="col-lg-8">
-            <div for="description" class="form-label">Descrição: </div>
+            <div for="description" class="form-label"><strong>Descrição:</strong> </div>
             {{product.description}}
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-3">
-            <div for="" class="form-label">Estoque</div>
+        <div class="col-lg-2">
+            <div for="" class="form-label"><strong>Estoque</strong></div>
             {{product.inventory}}
         </div>
-       <!--  <div class="col-lg-2">
-            <div for="" class="form-label">Status</div>
-            <input type="text" class="form-control" formControlName="status" placeholder="Status">
-        </div> -->
-        <div class="col-lg-3">
-            <div for="" class="form-label">Preço</div>
+        <div class="col-lg-2">
+            <div for="" class="form-label"><strong>Status</strong></div>
+            <div *ngIf="product.status == 1">Ativo</div>
+            <div *ngIf="product.status == 0">Inativo</div>
+        </div>
+        <div class="col-lg-2">
+            <div for="" class="form-label"><strong>Preço</strong></div>
             R$ {{product.value}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+            <a href="#" class="btn btn-primary">+ Add </a>
         </div>
     </div>
 </div>

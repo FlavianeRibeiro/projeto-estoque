@@ -35,24 +35,31 @@ export class CreatProdutsComponent implements OnInit {
 
   prodSubmit(){
       this.service.creat(this.prodForm.value).subscribe((res)=>{
-        console.log(res)
+        this.messagesuccess = res.message;
       }) 
   }
 
   prodUpdate(){
       this.service.update(this.prodForm.value, this.IdProduct).subscribe((res)=>{
-        console.log('prodUpdate --- > ',res)
+        console.log(res);
+        
+        this.messagesuccess = res.message;
       })
   }
 
   submit(){
-    console.log(this.prodForm.value)
     if(this.prodForm.valid){
-      this.prodForm.value.img = this.imageProdut;
-      (!this.IdProduct ? this.prodSubmit() : this.prodUpdate())
+      if(!this.IdProduct ){
+        this.prodForm.value.img = this.imageProdut;
+        this.prodSubmit() 
+        window.setTimeout(function() { location.reload(); }, 3000);
+      }else{
+        this.prodUpdate();
+      }
     }else{
       this.messageerr = 'Preencha todos os campos'
-    }
+    } 
+
   }
 
   getProdut(id:any){

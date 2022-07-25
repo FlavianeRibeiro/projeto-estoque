@@ -1,8 +1,12 @@
-<div class="card" style="width: 18rem;" *ngFor="let product of produts">
-    <img [src]="product.img" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">{{product.name}}</h5>
-      <p class="card-text">{{product.description}}</p>
-      <a href="#" class="btn btn-primary">Add carrinho</a>
+<div class="row">
+  <div class="col-sm-3 mt-2" *ngFor="let product of produts">
+    <div class="card" >
+      <img [src]="product.img" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title" [routerLink]="['/view', product.idprodut]">{{product.name}}</h5>
+        <p class="card-text">{{product.description}}</p>
+        <a href="#" class="btn btn-primary">+ Add </a>
+      </div>
     </div>
   </div>
+</div>
