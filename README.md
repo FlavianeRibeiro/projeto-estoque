@@ -1,4 +1,4 @@
-# projeto-estoque
+# Projto Estoque - CRUD Angula + Node
 
 ## Sistema desenvolvido em:
 * Angular 
