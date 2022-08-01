@@ -10,6 +10,6 @@ app.use(bodyparser.json());
 const routerProduts = require('./router/index')
 app.use(routerProduts);
 
-app.listen(3000, () =>{
+app.listen(process.env.PORT || 3000, () =>{
     console.log('Servidor rodando')
 })
